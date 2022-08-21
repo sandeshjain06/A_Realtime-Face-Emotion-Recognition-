@@ -48,7 +48,7 @@
 
 
 
-** Haarcascade_frontalface_default.xml**
+**Haarcascade_frontalface_default.xml**
 
 
 
