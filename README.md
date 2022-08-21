@@ -59,12 +59,11 @@
 
 1. Decide the Image pixel size 
 
+     Resample the images from 416 to 224 image pixels 
 
-- Resample the images from 416 to 224 image pixels 
+     - Transfer learning models will accept the images in the form of (224 * 224)pixel images.
 
-- Transfer learning models will accept the images in the form of (224 * 224)pixel images.
-
-- Input_size = (224 , 224)pixels
+     - Input_size = (224 , 224)pixels
 
 
 
