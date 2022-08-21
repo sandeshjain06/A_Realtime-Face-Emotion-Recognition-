@@ -7,7 +7,7 @@
 
 
 
-** 2 Techniques to Find Facial Expressions**
+**2 Techniques to Find Facial Expressions**
 
      Camera ,  Bio-Signals (EEG , ECG )
 
