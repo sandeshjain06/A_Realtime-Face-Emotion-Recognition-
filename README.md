@@ -35,7 +35,8 @@
       
       Every architecture will have different training weights for classifying 1000 classes  . 
       
-      Every year there is competition of imagenet , where better state of algorithm are developed which classifies the imagenet dateset with better accuracy. 
+      Every year there is competition of imagenet , where better state of algorithm are developed which classifies the imagenet 
+      dateset with better accuracy. 
       
       
       All the Transfer learning technique will give o/p for 1000 classes as it is trained on imagenet dataset. 
