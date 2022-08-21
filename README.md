@@ -55,7 +55,7 @@
 
 
 
-**Project Implementation :** 
+# Project Implementation 
 
 
 **1.Decide the Image pixel size** 
