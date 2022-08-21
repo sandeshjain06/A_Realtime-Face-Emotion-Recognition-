@@ -1,11 +1,23 @@
 #  Realtime   Face   Emotion Recognition using  Transfer  Learning  Techniques  And OpenCV 
 
 
+- Deep Learning architecture will detect a face and then based on facial expression it will decide the emotions of the humans.
+
+- Languages required : Python , OpenCV , Deep Learning - Tensorflow.
+
+
+
+** 2 Techniques to Find Facial Expressions**
+
+     Camera ,  Bio-Signals (EEG , ECG )
+
+
+
 **6 different Emotion Images Data are available :**
 
      Anger , Disgust , Fear , Happiness , Sadness , Surprise
 
-     Image size  -  416  * 416 
+     Image size  -  416  * 416 gray scale images 
 
      Total images : 11,473 - Train  size ( 1800 each )
 
@@ -16,27 +28,58 @@
       
       Transfer learning is a machine learning method where a model developed for a task is reused as the starting point 
       for a model on a second task.
+      
+      Transfer Learning architecture are trained on ImageNet Dataset for 1000 classes with different weights. 
+      
+      Every year there is competition of imagenet , where better state of algorithm are developed which classifies the imagenet dateset with better accuracy. 
+      
 
 **Types of Transfer learning techniques -**  
 	
-      VGG16 , VGG19 , ResNet , Inception , Xception , MobileNet
+     AlexNet , VGG16 , VGG19 , ResNet , Inception , Xception , MobileNet , GoogleNet 
+
+
+
+
+** Haarcascade_frontalface_default.xml**
+
+
 
 
 
 **Project Implementation :** 
 
 
-1.
-
-Input_size = 224 , 224
+1. Decide the Image pixel size 
 
 
-2.
+- Resample the images from 416 to 224 image pixels 
+
+- Transfer learning models will accept the images in the form of (224 * 224)pixel images.
+
+- Input_size = (224 , 224)pixels
+
+
+
+2. Output classification problem 
+
+- Transfer learning technique are trained for classifying 1000 or more different classes.
+
+
+- Based on your problem statement  decide the no of classes to be classified at the output layer .
+
+
+
+3.
+
+Discard the I/p and O/p layers , use the weights of imagenet to train the model .
+Do not train the layers available in ResNet50 .
 
 
 resnet = ResNet50(input_shape=image_size+[3],weights='imagenet',include_top=False)
 for layer in inception.layers:
     layer.trainable=False
+
 
 While importing the ResNet50 class, we mention include_top=False. 
 This ensures that we can add our own custom input and output layers according to our data.
@@ -48,11 +91,15 @@ Finally, we mention layer.trainable= False in the pretrained model.
 This ensures that the model does not learn the weights again, saving us a lot of time and space complexity.
 
 
-2.
+4.
+
+Converting the multi-dimensional into 1D using Flattening .
 
 Flattening the input , define the input and output , loss , optimizer , metrics 
 
-3.
+5.
+
+
 
 Use ImageDataGenerator - 
 
@@ -75,6 +122,7 @@ training_set=train_data.flow_from_directory(r 'D:\Sandesh\Data Science\Deep Lear
 Takes the path to a directory & generates batches of augmented data.
 
 4. Fit the model and train by defining epochs, training set , validation set , batch size
+
 
 
 5.
