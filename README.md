@@ -29,9 +29,16 @@
       Transfer learning is a machine learning method where a model developed for a task is reused as the starting point 
       for a model on a second task.
       
-      Transfer Learning architecture are trained on ImageNet Dataset for 1000 classes with different weights. 
+      Imagenet is the dataset which contains 1000 different classes.
+      
+      Transfer Learning architecture are trained on ImageNet Dataset 
+      
+      Every architecture will have different training weights for classifying 1000 classes  . 
       
       Every year there is competition of imagenet , where better state of algorithm are developed which classifies the imagenet dateset with better accuracy. 
+      
+      
+      All the Transfer learning technique will give o/p for 1000 classes as it is trained on imagenet dataset. 
       
 
 **Types of Transfer learning techniques -**  
@@ -121,11 +128,11 @@ training_set=train_data.flow_from_directory(r 'D:\Sandesh\Data Science\Deep Lear
 
 Takes the path to a directory & generates batches of augmented data.
 
-4. Fit the model and train by defining epochs, training set , validation set , batch size
+6. Fit the model and train by defining epochs, training set , validation set , batch size
 
 
 
-5.
+7.
 
 OPENCV :
 
