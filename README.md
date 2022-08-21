@@ -38,7 +38,6 @@
       Every year there is competition of imagenet , where better state of algorithm are developed which classifies the imagenet 
       dateset with better accuracy. 
       
-      
       All the Transfer learning technique will give o/p for 1000 classes as it is trained on imagenet dataset. 
       
 
@@ -49,13 +48,9 @@
 
 
 
-**Haarcascade_frontalface_default.xml**
-
-
-
-
 
 # Project Implementation 
+
 
 
 **1.Decide the Image pixel size** 
@@ -68,6 +63,8 @@
 
 
 
+
+
 **2.Output classification problem** 
 
      Transfer learning technique are trained for classifying 1000 or more different classes.
@@ -75,10 +72,9 @@
      Based on your problem statement  decide the no of classes to be classified at the output layer .
 
 
-3.
 
-     Discard the I/p and O/p layers , use the weights of imagenet to train the model .
-     Do not train the layers available in ResNet50 .
+
+**3.Define the ResNet Model and removing the input and o/p layers from ResNet Model and Dont train the weights of layers.**
 
 
 	resnet = ResNet50(input_shape=image_size+[3],weights='imagenet',include_top=False)
@@ -96,17 +92,20 @@
 	This ensures that the model does not learn the weights again, saving us a lot of time and space complexity.
 
 
-4.
+
+
+
+**4.Adding the input and output layers to ResNet Model and flattening the output layer**
+
 
 	Converting the multi-dimensional into 1D using Flattening .
 
 	Flattening the input , define the input and output , loss , optimizer , metrics 
 
-5.
 
 
 
-	Use ImageDataGenerator - 
+**5.Generate  Different Images using Image Generator only for training data not for test data** 
 
 
 	train_data=ImageDataGenerator(rescale=1./255,
@@ -126,19 +125,44 @@
 
 	Takes the path to a directory & generates batches of augmented data.
 
-6. Fit the model and train by defining epochs, training set , validation set , batch size
+**6.Fit the model and train by defining epochs, training set , validation set , batch size**
+
+
+    r = model.fit_generator(generator=training_set,
+    steps_per_epoch=len(training_set),
+    epochs=50,
+    verbose=1,
+    validation_data=test_set,
+    validation_steps=len(test_set),
+    shuffle=True)
 
 
 
-7.
+**7. PLot the Accuracy and Loss of validation and Training Data**
 
-OPENCV :
+	# Train and Test / validation Loss
+	plt.plot(r.history['loss'],label='train loss')
+	plt.plot(r.history['val_loss'],label='validation loss')
+	plt.title('Train VS Validation Loss')
+	plt.legend()
+	plt.show()
 
-cv.cvtColor() -   method is used to convert an image from one color space to another.
+	# Train and Test / validation accuracy
+	plt.plot(r.history['accuracy'],label='train accuracy')
+	plt.plot(r.history['val_accuracy'],label='validation accuracy')
+	plt.title('Train VS Validation Accuracy')
+	plt.legend()
+	plt.show()
 
-cv.GaussianBlur() - Blur the image
 
-cvt.Canny() -  Find the Edges from the images.
+
+**8.OpenCV** 
+
+	cv.cvtColor() -   method is used to convert an image from one color space to another.
+
+	cv.GaussianBlur() - Blur the image
+
+	cvt.Canny() -  Find the Edges from the images.
 
 
 
