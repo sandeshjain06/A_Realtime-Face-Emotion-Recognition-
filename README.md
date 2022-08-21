@@ -57,7 +57,7 @@
 **Project Implementation :** 
 
 
-1.Decide the Image pixel size 
+**1.Decide the Image pixel size** 
 
      Resample the images from 416 to 224 image pixels 
 
@@ -67,7 +67,7 @@
 
 
 
-2.Output classification problem 
+**2.Output classification problem** 
 
      Transfer learning technique are trained for classifying 1000 or more different classes.
 
