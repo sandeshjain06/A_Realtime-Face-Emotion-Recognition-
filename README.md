@@ -1,7 +1,7 @@
 #  Realtime   Face   Emotion Recognition using  Transfer  Learning  Techniques  And OpenCV 
 
 
-**6 different Emotion images are available :**
+**6 different Emotion Images Data are available :**
 
      Anger , Disgust , Fear , Happiness , Sadness , Surprise
 
@@ -17,10 +17,12 @@
       Transfer learning is a machine learning method where a model developed for a task is reused as the starting point 
       for a model on a second task.
 
-**Transfer learning techniques -**  
+**Types of Transfer learning techniques -**  
 	
-      Inception , Resnet , VGG 19 
+      VGG16 , VGG19 , ResNet , Inception , Xception , MobileNet
 
+
+**Implementation of Project : ** 
 
 
 1.
