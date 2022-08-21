@@ -22,7 +22,8 @@
       VGG16 , VGG19 , ResNet , Inception , Xception , MobileNet
 
 
-**Implementation of Project : ** 
+
+**Project Implementation :** 
 
 
 1.
