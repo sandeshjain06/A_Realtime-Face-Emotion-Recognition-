@@ -57,7 +57,7 @@
 **Project Implementation :** 
 
 
-1. Decide the Image pixel size 
+1.Decide the Image pixel size 
 
      Resample the images from 416 to 224 image pixels 
 
@@ -67,65 +67,63 @@
 
 
 
-2. Output classification problem 
+2.Output classification problem 
 
-- Transfer learning technique are trained for classifying 1000 or more different classes.
+     Transfer learning technique are trained for classifying 1000 or more different classes.
 
-
-- Based on your problem statement  decide the no of classes to be classified at the output layer .
-
+     Based on your problem statement  decide the no of classes to be classified at the output layer .
 
 
 3.
 
-Discard the I/p and O/p layers , use the weights of imagenet to train the model .
-Do not train the layers available in ResNet50 .
+     Discard the I/p and O/p layers , use the weights of imagenet to train the model .
+     Do not train the layers available in ResNet50 .
 
 
-resnet = ResNet50(input_shape=image_size+[3],weights='imagenet',include_top=False)
-for layer in inception.layers:
-    layer.trainable=False
+	resnet = ResNet50(input_shape=image_size+[3],weights='imagenet',include_top=False)
+	for layer in inception.layers:
+    	layer.trainable=False
 
 
-While importing the ResNet50 class, we mention include_top=False. 
-This ensures that we can add our own custom input and output layers according to our data.
+	While importing the ResNet50 class, we mention include_top=False. 
+	This ensures that we can add our own custom input and output layers according to our data.
 
-We mention the weights='imagenet'. 
-This means that the Resnet50 model will use the weights it learnt while being trained on the imagenet data.
+	We mention the weights='imagenet'. 
+	This means that the Resnet50 model will use the weights it learnt while being trained on the imagenet data.
 
-Finally, we mention layer.trainable= False in the pretrained model.
-This ensures that the model does not learn the weights again, saving us a lot of time and space complexity.
+	Finally, we mention layer.trainable= False in the pretrained model.
+	This ensures that the model does not learn the weights again, saving us a lot of time and space complexity.
 
 
 4.
 
-Converting the multi-dimensional into 1D using Flattening .
+	Converting the multi-dimensional into 1D using Flattening .
 
-Flattening the input , define the input and output , loss , optimizer , metrics 
+	Flattening the input , define the input and output , loss , optimizer , metrics 
 
 5.
 
 
 
-Use ImageDataGenerator - 
+	Use ImageDataGenerator - 
 
 
-train_data=ImageDataGenerator(rescale=1./255,
+	train_data=ImageDataGenerator(rescale=1./255,
                                 shear_range=0.2,
                                 zoom_range=0.2,
                                 horizontal_flip=True)
 
-The "ImageDataGenerator" will produce 10 images in each iteration of the training.
+	The "ImageDataGenerator" will produce 10 images in each iteration of the training.
 
 
-training_set=train_data.flow_from_directory(r 'D:\Sandesh\Data Science\Deep Learning\
+	training_set=train_data.flow_from_directory(r 'D:\Sandesh\Data Science\Deep Learning\
 						Sentiment_Analysis\eINTERFACE_2021_Image\train',
                                                 target_size=(224,224),
                                                batch_size=16,
                                                class_mode='categorical'
                                               )
 
-Takes the path to a directory & generates batches of augmented data.
+	Takes the path to a directory & generates batches of augmented data.
 
 6. Fit the model and train by defining epochs, training set , validation set , batch size
 
