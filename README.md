@@ -1,18 +1,25 @@
 #  Realtime   Face   Emotion Recognition using  Transfer  Learning  Techniques  And OpenCV 
 
 
-6 different Emotion images are available :
+**6 different Emotion images are available :**
 
      Anger , Disgust , Fear , Happiness , Sadness , Surprise
 
-Image size  -  416  * 416 
+     Image size  -  416  * 416 
 
-Total images : 11,473 - Train  size ( 1800 each )
+     Total images : 11,473 - Train  size ( 1800 each )
 
-Total images : 1438 - test size ( 250 each )
+     Total images : 1438 - test size ( 250 each )
 
 
-Transfer learning techniques -  Inception , Resnet , VGG 19 
+**What is Transfer Learning  -** 
+      
+      Transfer learning is a machine learning method where a model developed for a task is reused as the starting point 
+      for a model on a second task.
+
+**Transfer learning techniques -**  
+	
+      Inception , Resnet , VGG 19 
 
 
 
