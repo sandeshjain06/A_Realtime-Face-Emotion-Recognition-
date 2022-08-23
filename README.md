@@ -26,8 +26,8 @@
 
 **What is Transfer Learning  -** 
       
-      Transfer learning is a machine learning method where a model developed for a task is reused 
-      as the starting point for a model on a second task.
+      Transfer learning is a machine learning method where a model developed for a task is reused as the starting point
+      for a model on a second task.
       
       Imagenet is the dataset which contains 1000 different classes.
       
